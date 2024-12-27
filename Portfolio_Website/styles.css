@@ -1,0 +1,495 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #0e0e0e;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space between logo and nav */
+  background-color: #333; /* Dark background for navbar */
+  padding: 10px 20px; /* Padding around navbar */
+}
+
+/* Logo styles */
+.logo img {
+  width: 40px; /* Adjust the size as needed */
+  height: 40px;
+  margin-right: 10px; /* Space between the logo and text */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image fits within the circle */
+  border: 2px solid #ccb312; /* Optional: adds a white border around the circle */
+}
+
+/* Centered Navigation Links */
+.nav-links {
+  display: flex;
+  justify-content: left;
+  flex-grow: 1;
+}
+
+.nav-links a {
+  color: #aaa;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00aced;
+}
+
+/* Right Side of Navbar: Contact Button and Search Bar */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right button {
+  background-color: #00aced;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.navbar-right button:hover {
+  background-color: #0084b4;
+}
+
+.search-bar {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background-color: #222;
+  color: #fff;
+}
+
+.search-bar::placeholder {
+  color: #888;
+}
+
+/* Mobile Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+  }
+
+  .nav-links a {
+    margin: 5px;
+  }
+
+  .navbar-right {
+    margin-top: 10px;
+  }
+}
+/* Home Section with Background Image */
+.hero {
+  position: relative;
+  background-image: url('Assets/images/Home_Background.jpg'); /* Updated with the correct path */
+  background-size: cover; /* Makes the image cover the entire section */
+  background-position: center; /* Centers the image */
+  background-attachment: fixed; /* Parallax effect */
+  color: #fff; /* Text color */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Optional Overlay for Better Text Visibility */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Brings content above the overlay */
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.buttons .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #00aced;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 20px 10px;
+  transition: background-color 0.3s ease;
+}
+
+.buttons .btn:hover {
+  background-color: #0084b4;
+}
+
+.social-links a {
+  color: #aaa;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.social-links a:hover {
+  color: #00aced;
+}
+
+/* Search Bar Styles */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar {
+  width: 200px;
+  padding: 8px 12px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.search-bar:focus {
+  border-color: #007bff; /* Highlight border on focus */
+}
+
+.navbar-right button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-right button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.navbar-right button:active {
+  background-color: #003f7f; /* Even darker on click */
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: inherit; /* Adapts to the current theme's text color */
+  transition: color 0.3s ease;
+}
+
+.theme-toggle #theme-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Light Theme (default) */
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header.light-mode, footer.light-mode {
+  background-color: #f1f1f1;
+  color: #000000;
+}
+
+/* Dark Theme */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+header.dark-mode, footer.dark-mode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+/* Dark Mode Styling for Links */
+.nav-links a.dark-mode,
+.footer-content a.dark-mode {
+  color: #ffffff;
+}
+
+/* Active State for Toggle Icon */
+body.dark-mode .theme-toggle #theme-icon {
+  transform: rotate(180deg); /* Example effect to indicate theme change */
+  color: #fbc02d; /* A bright yellow for contrast in dark mode */
+}
+
+/* About Section with Background Image */
+.about {
+  background: url('Assets/images/About_Background.png') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  /* max-width: 1800px; */
+  margin: 0 auto;
+  width: 90%;
+}
+
+.text-section {
+  flex: 0.5;
+  max-width: 50%; /* Keeps text aligned to the left side */
+  padding-right: 30px;
+  text-align: left; /* Ensures left alignment for text */
+}
+
+.photo-section {
+  flex: 0.5; /* Allocates 40% width for the profile photo */
+  display: flex;
+  justify-content: center; /* Centers the photo horizontally within its container */
+  align-items: center; /* Centers the photo vertically */
+}
+
+.photo-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Adds rounded corners for a softer look */
+}
+
+
+/* Resume Section Styling */
+.resume {
+  background-color: #1b1b1b;
+  color: white;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.resume-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 90%;
+}
+
+/* Column Styling */
+.resume-column {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.resume-column h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #00bcd4;
+}
+
+/* Skills, Languages, and Personal Skills Lists */
+.skills, .languages, .personal-skills, .design-skills {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.skills li, .languages li, .personal-skills li, .design-skills li {
+  padding: 5px 0;
+  font-size: 1em;
+}
+
+/* Timeline for Experience and Education */
+.timeline {
+  margin-bottom: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 15px;
+}
+
+.timeline-item span {
+  display: block;
+  font-weight: bold;
+  color: #00bcd4;
+  margin-bottom: 5px;
+}
+
+.timeline-item p {
+  margin: 0;
+}
+
+/* Hobbies Section */
+.hobbies {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hobby {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.hobby img {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.hobby span {
+  font-size: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resume-content {
+    flex-direction: column;
+  }
+
+  .resume-column {
+    margin: 20px 0;
+  }
+}
+
+
+/* Portfolio Section */
+.portfolio {
+  padding: 50px;
+  background-color: #111;
+  text-align: center;
+}
+
+.portfolio h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.portfolio-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.portfolio-item {
+  background-color: #1a1a1a;
+  width: 300px;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-item h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.portfolio-item a {
+  color: #00aced;
+  text-decoration: none;
+}
+
+/* Contact Section */
+.contact {
+  text-align: center;
+  padding: 50px;
+  background-color: #111;
+}
+
+.contact h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  color: #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+footer .social-links a {
+  color: #00aced;
+  margin: 0 10px;
+  text-decoration: none;
+}
